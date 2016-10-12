@@ -3,6 +3,8 @@ package fr.miage.bibal.web.rest;
 import fr.miage.bibal.BibalApp;
 
 import fr.miage.bibal.domain.Emprunt;
+import fr.miage.bibal.domain.Usager;
+import fr.miage.bibal.domain.Exemplaire;
 import fr.miage.bibal.repository.EmpruntRepository;
 
 import org.junit.Before;
@@ -86,6 +88,16 @@ public class EmpruntResourceIntTest {
         Emprunt emprunt = new Emprunt()
                 .dateEmprunt(DEFAULT_DATE_EMPRUNT)
                 .dateRetour(DEFAULT_DATE_RETOUR);
+        // Add required entity
+        Usager usager = UsagerResourceIntTest.createEntity(em);
+        em.persist(usager);
+        em.flush();
+        emprunt.setUsager(usager);
+        // Add required entity
+        Exemplaire exemplaire = ExemplaireResourceIntTest.createEntity(em);
+        em.persist(exemplaire);
+        em.flush();
+        emprunt.setExemplaire(exemplaire);
         return emprunt;
     }
 

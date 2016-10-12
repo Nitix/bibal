@@ -55,6 +55,7 @@ public class Oeuvre implements Serializable {
     private Boolean estLivre;
 
     @ManyToOne
+    @NotNull
     private Auteur auteur;
 
     public Long getId() {

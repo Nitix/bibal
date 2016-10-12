@@ -36,15 +36,27 @@
 
         <div class="form-group">
             <label data-translate="bibalApp.reservation.usager" for="field_usager">Usager</label>
-            <select class="form-control" id="field_usager" name="usager" ng-model="vm.reservation.usager" ng-options="usager as usager.id for usager in vm.usagers track by usager.id">
+            <select class="form-control" id="field_usager" name="usager" ng-model="vm.reservation.usager" ng-options="usager as usager.id for usager in vm.usagers track by usager.id" required>
                 <option value=""></option>
             </select>
         </div>
+        <div ng-show="editForm.usager.$invalid">
+            <p class="help-block"
+                ng-show="editForm.usager.$error.required" data-translate="entity.validation.required">
+                This field is required.
+            </p>
+        </div>
         <div class="form-group">
             <label data-translate="bibalApp.reservation.oeuvre" for="field_oeuvre">Oeuvre</label>
-            <select class="form-control" id="field_oeuvre" name="oeuvre" ng-model="vm.reservation.oeuvre" ng-options="oeuvre as oeuvre.id for oeuvre in vm.oeuvres track by oeuvre.id">
+            <select class="form-control" id="field_oeuvre" name="oeuvre" ng-model="vm.reservation.oeuvre" ng-options="oeuvre as oeuvre.id for oeuvre in vm.oeuvres track by oeuvre.id" required>
                 <option value=""></option>
             </select>
+        </div>
+        <div ng-show="editForm.oeuvre.$invalid">
+            <p class="help-block"
+                ng-show="editForm.oeuvre.$error.required" data-translate="entity.validation.required">
+                This field is required.
+            </p>
         </div>
     </div>
     <div class="modal-footer">

@@ -106,9 +106,15 @@
 
         <div class="form-group">
             <label data-translate="bibalApp.oeuvre.auteur" for="field_auteur">Auteur</label>
-            <select class="form-control" id="field_auteur" name="auteur" ng-model="vm.oeuvre.auteur" ng-options="auteur as auteur.id for auteur in vm.auteurs track by auteur.id">
+            <select class="form-control" id="field_auteur" name="auteur" ng-model="vm.oeuvre.auteur" ng-options="auteur.id as auteur.id + ' : ' +  auteur.nom + ' ' + auteur.prenom for auteur in vm.auteurs track by auteur.id" required>
                 <option value=""></option>
             </select>
+        </div>
+        <div ng-show="editForm.auteur.$invalid">
+            <p class="help-block"
+                ng-show="editForm.auteur.$error.required" data-translate="entity.validation.required">
+                This field is required.
+            </p>
         </div>
     </div>
     <div class="modal-footer">

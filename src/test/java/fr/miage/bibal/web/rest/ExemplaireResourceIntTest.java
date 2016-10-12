@@ -3,6 +3,7 @@ package fr.miage.bibal.web.rest;
 import fr.miage.bibal.BibalApp;
 
 import fr.miage.bibal.domain.Exemplaire;
+import fr.miage.bibal.domain.Oeuvre;
 import fr.miage.bibal.repository.ExemplaireRepository;
 
 import org.junit.Before;
@@ -76,6 +77,11 @@ public class ExemplaireResourceIntTest {
     public static Exemplaire createEntity(EntityManager em) {
         Exemplaire exemplaire = new Exemplaire()
                 .etat(DEFAULT_ETAT);
+        // Add required entity
+        Oeuvre oeuvre = OeuvreResourceIntTest.createEntity(em);
+        em.persist(oeuvre);
+        em.flush();
+        exemplaire.setOeuvre(oeuvre);
         return exemplaire;
     }
 

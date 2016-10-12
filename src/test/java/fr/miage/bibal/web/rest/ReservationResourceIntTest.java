@@ -3,6 +3,8 @@ package fr.miage.bibal.web.rest;
 import fr.miage.bibal.BibalApp;
 
 import fr.miage.bibal.domain.Reservation;
+import fr.miage.bibal.domain.Usager;
+import fr.miage.bibal.domain.Oeuvre;
 import fr.miage.bibal.repository.ReservationRepository;
 
 import org.junit.Before;
@@ -81,6 +83,16 @@ public class ReservationResourceIntTest {
     public static Reservation createEntity(EntityManager em) {
         Reservation reservation = new Reservation()
                 .dateReservation(DEFAULT_DATE_RESERVATION);
+        // Add required entity
+        Usager usager = UsagerResourceIntTest.createEntity(em);
+        em.persist(usager);
+        em.flush();
+        reservation.setUsager(usager);
+        // Add required entity
+        Oeuvre oeuvre = OeuvreResourceIntTest.createEntity(em);
+        em.persist(oeuvre);
+        em.flush();
+        reservation.setOeuvre(oeuvre);
         return reservation;
     }
 

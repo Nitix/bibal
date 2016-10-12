@@ -3,12 +3,14 @@
     "relationships": [
         {
             "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
             "relationshipName": "usager",
             "otherEntityName": "usager",
             "otherEntityField": "id"
         },
         {
             "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
             "relationshipName": "oeuvre",
             "otherEntityName": "oeuvre",
             "otherEntityField": "id"

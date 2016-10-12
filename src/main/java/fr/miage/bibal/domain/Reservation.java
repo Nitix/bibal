@@ -28,9 +28,11 @@ public class Reservation implements Serializable {
     private ZonedDateTime dateReservation;
 
     @ManyToOne
+    @NotNull
     private Usager usager;
 
     @ManyToOne
+    @NotNull
     private Oeuvre oeuvre;
 
     public Long getId() {

@@ -31,9 +31,11 @@ public class Emprunt implements Serializable {
     private ZonedDateTime dateRetour;
 
     @ManyToOne
+    @NotNull
     private Usager usager;
 
     @ManyToOne
+    @NotNull
     private Exemplaire exemplaire;
 
     public Long getId() {

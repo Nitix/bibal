@@ -27,6 +27,7 @@ public class Exemplaire implements Serializable {
     private String etat;
 
     @ManyToOne
+    @NotNull
     private Oeuvre oeuvre;
 
     public Long getId() {

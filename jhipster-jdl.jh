@@ -37,25 +37,10 @@ entity Auteur {
 }
 
 relationship ManyToOne  {
-	Exemplaire{Oeuvre} to Oeuvre
-}
-
-relationship ManyToOne {
-	Reservation{Usager} to Usager
-}
-
-relationship ManyToOne {
-	Emprunt{Usager} to Usager
-}
-
-relationship ManyToOne {
-	Emprunt{Exemplaire} to Exemplaire
-}
-
-relationship ManyToOne {
-	Oeuvre{Auteur} to Auteur
-}
-
-relationship ManyToOne {
-	Reservation{Oeuvre} to Oeuvre
+	Exemplaire{Oeuvre required} to Oeuvre,
+    Reservation{Usager required} to Usager,
+	Emprunt{Usager required} to Usager,
+	Emprunt{Exemplaire required} to Exemplaire,
+    Reservation{Oeuvre required} to Oeuvre,
+    Oeuvre{Auteur required} to Auteur
 }

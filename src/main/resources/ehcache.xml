@@ -85,5 +85,9 @@
         timeToLiveSeconds="3600">
     </cache>
 
+    <cache name="fr.miage.bibal.domain.Oeuvre.titres"
+        timeToLiveSeconds="3600">
+    </cache>
+
     <!-- jhipster-needle-ehcache-add-entry -->
 </ehcache>

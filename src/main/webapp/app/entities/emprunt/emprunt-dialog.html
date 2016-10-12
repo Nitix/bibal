@@ -46,15 +46,27 @@
 
         <div class="form-group">
             <label data-translate="bibalApp.emprunt.usager" for="field_usager">Usager</label>
-            <select class="form-control" id="field_usager" name="usager" ng-model="vm.emprunt.usager" ng-options="usager as usager.id for usager in vm.usagers track by usager.id">
+            <select class="form-control" id="field_usager" name="usager" ng-model="vm.emprunt.usager" ng-options="usager as usager.id for usager in vm.usagers track by usager.id" required>
                 <option value=""></option>
             </select>
         </div>
+        <div ng-show="editForm.usager.$invalid">
+            <p class="help-block"
+                ng-show="editForm.usager.$error.required" data-translate="entity.validation.required">
+                This field is required.
+            </p>
+        </div>
         <div class="form-group">
             <label data-translate="bibalApp.emprunt.exemplaire" for="field_exemplaire">Exemplaire</label>
-            <select class="form-control" id="field_exemplaire" name="exemplaire" ng-model="vm.emprunt.exemplaire" ng-options="exemplaire as exemplaire.id for exemplaire in vm.exemplaires track by exemplaire.id">
+            <select class="form-control" id="field_exemplaire" name="exemplaire" ng-model="vm.emprunt.exemplaire" ng-options="exemplaire as exemplaire.id for exemplaire in vm.exemplaires track by exemplaire.id" required>
                 <option value=""></option>
             </select>
+        </div>
+        <div ng-show="editForm.exemplaire.$invalid">
+            <p class="help-block"
+                ng-show="editForm.exemplaire.$error.required" data-translate="entity.validation.required">
+                This field is required.
+            </p>
         </div>
     </div>
     <div class="modal-footer">

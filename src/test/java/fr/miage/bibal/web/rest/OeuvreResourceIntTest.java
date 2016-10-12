@@ -3,6 +3,7 @@ package fr.miage.bibal.web.rest;
 import fr.miage.bibal.BibalApp;
 
 import fr.miage.bibal.domain.Oeuvre;
+import fr.miage.bibal.domain.Auteur;
 import fr.miage.bibal.repository.OeuvreRepository;
 
 import org.junit.Before;
@@ -115,6 +116,11 @@ public class OeuvreResourceIntTest {
                 .parution(DEFAULT_PARUTION)
                 .periodicite(DEFAULT_PERIODICITE)
                 .estLivre(DEFAULT_EST_LIVRE);
+        // Add required entity
+        Auteur auteur = AuteurResourceIntTest.createEntity(em);
+        em.persist(auteur);
+        em.flush();
+        oeuvre.setAuteur(auteur);
         return oeuvre;
     }
 
