@@ -125,7 +125,7 @@
         "emailexists": "Email déja utilisé !",
         "idexists": "Une nouvelle entité {{entityName}} ne peut pas avoir d'ID !"
     },
-    "footer": "Bibliothèque proposée par MOUREY Arthur et PIERSON Guillaume."
+    "footer": "Bibliothèque proposée par MOUREY Arthur et PIERSON Guillaume.",
     "bootswatch": {
         "themeSelector": "Theme"
     }
