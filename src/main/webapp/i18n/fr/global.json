@@ -1,12 +1,12 @@
 {
     "global": {
-        "title": "Bibal",
+        "title": "BIBAL, plate-forme de gestion de bibliothèque",
         "browsehappy": "Vous utilisez un <strong>ancien</strong> navigateur. Veuillez <a href=\"http://browsehappy.com/?locale=fr\">mettre à jour votre navigateur</a> pour une meilleure expérience.",
         "menu": {
             "home": "Accueil",
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
-                "main": "Entités",
+                "main": "Gestion bibliothèque",
                 "exemplaire": "Exemplaire",
                 "usager": "Usager",
                 "oeuvre": "Oeuvre",
@@ -125,7 +125,7 @@
         "emailexists": "Email déja utilisé !",
         "idexists": "Une nouvelle entité {{entityName}} ne peut pas avoir d'ID !"
     },
-    "footer": "Ceci est votre pied de page",
+    "footer": "Bibliothèque proposée par MOUREY Arthur et PIERSON Guillaume."
     "bootswatch": {
         "themeSelector": "Theme"
     }
