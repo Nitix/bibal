@@ -1,0 +1,35 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "usager",
+            "otherEntityName": "usager",
+            "otherEntityRelationshipName": "emprunt"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "exemplaire",
+            "otherEntityName": "exemplaire",
+            "otherEntityRelationshipName": "emprunt"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "dateEmprunt",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dateRetour",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20161012101628",
+    "entityTableName": "emprunt",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

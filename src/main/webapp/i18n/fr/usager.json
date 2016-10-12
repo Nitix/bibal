@@ -1,0 +1,27 @@
+{
+    "bibalApp": {
+        "usager" : {
+            "home": {
+                "title": "Usagers",
+                "createLabel": "Créer un nouveau Usager",
+                "createOrEditLabel": "Créer ou éditer un Usager",
+                "search": "Recherche pour Usager"
+            },
+            "created": "Un nouveau Usager a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Usager avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Usager avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Usager {{ id }} ?"
+            },
+            "detail": {
+                "title": "Usager"
+            },
+            "nom": "Nom",
+            "prenom": "Prenom",
+            "dateNaissance": "Date Naissance",
+            "adresse": "Adresse",
+            "emprunt": "Emprunt",
+            "reservation": "Reservation"
+        }
+    }
+}

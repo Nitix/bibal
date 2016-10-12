@@ -1,0 +1,63 @@
+
+<div>
+    <h2><span data-translate="bibalApp.oeuvre.detail.title">Oeuvre</span> {{vm.oeuvre.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="bibalApp.oeuvre.titre">Titre</span></dt>
+        <dd>
+            <span>{{vm.oeuvre.titre}}</span>
+        </dd>
+        <dt><span data-translate="bibalApp.oeuvre.editeur">Editeur</span></dt>
+        <dd>
+            <span>{{vm.oeuvre.editeur}}</span>
+        </dd>
+        <dt><span data-translate="bibalApp.oeuvre.description">Description</span></dt>
+        <dd>
+            <span>{{vm.oeuvre.description}}</span>
+        </dd>
+        <dt><span data-translate="bibalApp.oeuvre.dataPublication">Data Publication</span></dt>
+        <dd>
+            <span>{{vm.oeuvre.dataPublication | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="bibalApp.oeuvre.dateEdition">Date Edition</span></dt>
+        <dd>
+            <span>{{vm.oeuvre.dateEdition | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="bibalApp.oeuvre.numero">Numero</span></dt>
+        <dd>
+            <span>{{vm.oeuvre.numero}}</span>
+        </dd>
+        <dt><span data-translate="bibalApp.oeuvre.parution">Parution</span></dt>
+        <dd>
+            <span>{{vm.oeuvre.parution | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="bibalApp.oeuvre.periodicite">Periodicite</span></dt>
+        <dd>
+            <span>{{vm.oeuvre.periodicite}}</span>
+        </dd>
+        <dt><span data-translate="bibalApp.oeuvre.estLivre">Est Livre</span></dt>
+        <dd>
+            <span>{{vm.oeuvre.estLivre}}</span>
+        </dd>
+        <dt><span data-translate="bibalApp.oeuvre.exemplaire">Exemplaire</span></dt>
+        <dd>
+            <a ui-sref="exemplaire-detail({id:vm.oeuvre.exemplaire.id})">{{vm.oeuvre.exemplaire.id}}</a>
+        </dd>
+        <dt><span data-translate="bibalApp.oeuvre.reservation">Reservation</span></dt>
+        <dd>
+            <a ui-sref="reservation-detail({id:vm.oeuvre.reservation.id})">{{vm.oeuvre.reservation.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="oeuvre-detail.edit({id:vm.oeuvre.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

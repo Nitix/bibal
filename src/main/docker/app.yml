@@ -1,0 +1,15 @@
+version: '2'
+services:
+    bibal-app:
+        image: bibal
+            - bibal-mariadb:mariadb
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:mariadb://mariadb:3306/bibal
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+        ports:
+            - 8080:8080
+    bibal-mariadb:
+        extends:
+            file: mariadb.yml
+            service: bibal-mariadb

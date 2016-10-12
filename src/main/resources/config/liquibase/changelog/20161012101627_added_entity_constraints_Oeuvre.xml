@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Oeuvre.
+    -->
+    <changeSet id="20161012101627-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="exemplaire_id"
+                                 baseTableName="oeuvre"
+                                 constraintName="fk_oeuvre_exemplaire_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="exemplaire"/>
+
+        <addForeignKeyConstraint baseColumnNames="reservation_id"
+                                 baseTableName="oeuvre"
+                                 constraintName="fk_oeuvre_reservation_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="reservation"/>
+
+    </changeSet>
+</databaseChangeLog>

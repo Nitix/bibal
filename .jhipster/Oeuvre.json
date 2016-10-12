@@ -1,0 +1,78 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "exemplaire",
+            "otherEntityName": "exemplaire",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "auteur",
+            "otherEntityName": "auteur",
+            "otherEntityRelationshipName": "oeuvre"
+        },
+        {
+            "relationshipName": "reservation",
+            "otherEntityName": "reservation",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "titre",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "editeur",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dataPublication",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dateEdition",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "numero",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "parution",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "periodicite",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "estLivre",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20161012101627",
+    "entityTableName": "oeuvre",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

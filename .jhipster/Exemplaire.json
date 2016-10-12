@@ -1,0 +1,31 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "oeuvre",
+            "otherEntityName": "oeuvre",
+            "otherEntityRelationshipName": "exemplaire"
+        },
+        {
+            "relationshipName": "emprunt",
+            "otherEntityName": "emprunt",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "etat",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20161012101625",
+    "entityTableName": "exemplaire",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

@@ -1,0 +1,31 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "usager",
+            "otherEntityName": "usager",
+            "otherEntityRelationshipName": "reservation"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "oeuvre",
+            "otherEntityName": "oeuvre",
+            "otherEntityRelationshipName": "reservation"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "dateReservation",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20161012101629",
+    "entityTableName": "reservation",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

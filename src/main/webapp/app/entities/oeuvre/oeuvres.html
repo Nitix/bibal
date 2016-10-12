@@ -1,0 +1,80 @@
+<div>
+    <h2 data-translate="bibalApp.oeuvre.home.title">Oeuvres</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="oeuvre.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="bibalApp.oeuvre.home.createLabel">
+                        Create new Oeuvre
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="bibalApp.oeuvre.titre">Titre</span></th>
+                    <th><span data-translate="bibalApp.oeuvre.editeur">Editeur</span></th>
+                    <th><span data-translate="bibalApp.oeuvre.description">Description</span></th>
+                    <th><span data-translate="bibalApp.oeuvre.dataPublication">Data Publication</span></th>
+                    <th><span data-translate="bibalApp.oeuvre.dateEdition">Date Edition</span></th>
+                    <th><span data-translate="bibalApp.oeuvre.numero">Numero</span></th>
+                    <th><span data-translate="bibalApp.oeuvre.parution">Parution</span></th>
+                    <th><span data-translate="bibalApp.oeuvre.periodicite">Periodicite</span></th>
+                    <th><span data-translate="bibalApp.oeuvre.estLivre">Est Livre</span></th>
+                    <th><span data-translate="bibalApp.oeuvre.exemplaire">Exemplaire</span></th>
+                    <th><span data-translate="bibalApp.oeuvre.reservation">Reservation</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="oeuvre in vm.oeuvres track by oeuvre.id">
+                    <td><a ui-sref="oeuvre-detail({id:oeuvre.id})">{{oeuvre.id}}</a></td>
+                    <td>{{oeuvre.titre}}</td>
+                    <td>{{oeuvre.editeur}}</td>
+                    <td>{{oeuvre.description}}</td>
+                    <td>{{oeuvre.dataPublication | date:'medium'}}</td>
+                    <td>{{oeuvre.dateEdition | date:'medium'}}</td>
+                    <td>{{oeuvre.numero}}</td>
+                    <td>{{oeuvre.parution | date:'medium'}}</td>
+                    <td>{{oeuvre.periodicite}}</td>
+                    <td>{{oeuvre.estLivre}}</td>
+                    <td>
+                        <a ui-sref="exemplaire-detail({id:oeuvre.exemplaire.id})">{{oeuvre.exemplaire.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="reservation-detail({id:oeuvre.reservation.id})">{{oeuvre.reservation.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="oeuvre-detail({id:oeuvre.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="oeuvre.edit({id:oeuvre.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="oeuvre.delete({id:oeuvre.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

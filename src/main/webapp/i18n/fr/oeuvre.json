@@ -1,0 +1,33 @@
+{
+    "bibalApp": {
+        "oeuvre" : {
+            "home": {
+                "title": "Oeuvres",
+                "createLabel": "Créer un nouveau Oeuvre",
+                "createOrEditLabel": "Créer ou éditer un Oeuvre",
+                "search": "Recherche pour Oeuvre"
+            },
+            "created": "Un nouveau Oeuvre a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Oeuvre avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Oeuvre avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Oeuvre {{ id }} ?"
+            },
+            "detail": {
+                "title": "Oeuvre"
+            },
+            "titre": "Titre",
+            "editeur": "Editeur",
+            "description": "Description",
+            "dataPublication": "Data Publication",
+            "dateEdition": "Date Edition",
+            "numero": "Numero",
+            "parution": "Parution",
+            "periodicite": "Periodicite",
+            "estLivre": "Est Livre",
+            "exemplaire": "Exemplaire",
+            "auteur": "Auteur",
+            "reservation": "Reservation"
+        }
+    }
+}

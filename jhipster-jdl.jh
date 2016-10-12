@@ -1,0 +1,61 @@
+entity Exemplaire {
+    etat String required
+}
+
+entity Usager {
+	nom String required,
+    prenom String required,
+    dateNaissance ZonedDateTime required,
+	adresse String required
+}
+
+entity Oeuvre {
+	titre String required,
+    editeur String required,
+    description String required,
+    dataPublication ZonedDateTime,
+    dateEdition ZonedDateTime,
+    numero Integer,
+    parution ZonedDateTime,
+    periodicite Integer,
+    estLivre Boolean required
+}
+
+entity Emprunt {
+	dateEmprunt ZonedDateTime required,
+	dateRetour ZonedDateTime
+}
+
+entity Reservation {
+	dateReservation ZonedDateTime required
+}
+
+entity Auteur {
+	nom String required,
+    prenom String required,
+    dateNaissance ZonedDateTime required
+}
+
+relationship OneToMany {
+	Exemplaire{oeuvre} to Oeuvre 
+}
+
+relationship OneToMany {
+	Reservation{usager} to Usager 
+}
+
+relationship OneToMany {
+	Emprunt{usager} to Usager 
+}
+
+relationship OneToMany {
+	Emprunt{exemplaire} to Exemplaire 
+}
+
+relationship OneToMany {
+	Oeuvre{auteur} to Auteur
+}
+
+relationship OneToMany {
+	Reservation{oeuvre} to Oeuvre
+}

@@ -1,0 +1,25 @@
+{
+    "bibalApp": {
+        "emprunt" : {
+            "home": {
+                "title": "Emprunts",
+                "createLabel": "Créer un nouveau Emprunt",
+                "createOrEditLabel": "Créer ou éditer un Emprunt",
+                "search": "Recherche pour Emprunt"
+            },
+            "created": "Un nouveau Emprunt a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Emprunt avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Emprunt avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Emprunt {{ id }} ?"
+            },
+            "detail": {
+                "title": "Emprunt"
+            },
+            "dateEmprunt": "Date Emprunt",
+            "dateRetour": "Date Retour",
+            "usager": "Usager",
+            "exemplaire": "Exemplaire"
+        }
+    }
+}

@@ -1,0 +1,70 @@
+<div>
+    <h2 data-translate="bibalApp.usager.home.title">Usagers</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="usager.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="bibalApp.usager.home.createLabel">
+                        Create new Usager
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="bibalApp.usager.nom">Nom</span></th>
+                    <th><span data-translate="bibalApp.usager.prenom">Prenom</span></th>
+                    <th><span data-translate="bibalApp.usager.dateNaissance">Date Naissance</span></th>
+                    <th><span data-translate="bibalApp.usager.adresse">Adresse</span></th>
+                    <th><span data-translate="bibalApp.usager.emprunt">Emprunt</span></th>
+                    <th><span data-translate="bibalApp.usager.reservation">Reservation</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="usager in vm.usagers track by usager.id">
+                    <td><a ui-sref="usager-detail({id:usager.id})">{{usager.id}}</a></td>
+                    <td>{{usager.nom}}</td>
+                    <td>{{usager.prenom}}</td>
+                    <td>{{usager.dateNaissance | date:'medium'}}</td>
+                    <td>{{usager.adresse}}</td>
+                    <td>
+                        <a ui-sref="emprunt-detail({id:usager.emprunt.id})">{{usager.emprunt.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="reservation-detail({id:usager.reservation.id})">{{usager.reservation.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="usager-detail({id:usager.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="usager.edit({id:usager.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="usager.delete({id:usager.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
