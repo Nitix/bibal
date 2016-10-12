@@ -5,16 +5,15 @@
         .module('bibalApp')
         .controller('ExemplaireDialogController', ExemplaireDialogController);
 
-    ExemplaireDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Exemplaire', 'Oeuvre', 'Emprunt'];
+    ExemplaireDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Exemplaire', 'Oeuvre'];
 
-    function ExemplaireDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Exemplaire, Oeuvre, Emprunt) {
+    function ExemplaireDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Exemplaire, Oeuvre) {
         var vm = this;
 
         vm.exemplaire = entity;
         vm.clear = clear;
         vm.save = save;
         vm.oeuvres = Oeuvre.query();
-        vm.emprunts = Emprunt.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

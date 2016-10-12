@@ -13,8 +13,8 @@
     <include file="classpath:config/liquibase/changelog/20161012101630_added_entity_Auteur.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="classpath:config/liquibase/changelog/20161012101625_added_entity_constraints_Exemplaire.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20161012101626_added_entity_constraints_Usager.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20161012101627_added_entity_constraints_Oeuvre.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20161012101630_added_entity_constraints_Auteur.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20161012101628_added_entity_constraints_Emprunt.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20161012101629_added_entity_constraints_Reservation.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

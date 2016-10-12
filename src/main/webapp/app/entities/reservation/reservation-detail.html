@@ -8,6 +8,14 @@
         <dd>
             <span>{{vm.reservation.dateReservation | date:'medium'}}</span>
         </dd>
+        <dt><span data-translate="bibalApp.reservation.usager">Usager</span></dt>
+        <dd>
+            <a ui-sref="usager-detail({id:vm.reservation.usager.id})">{{vm.reservation.usager.id}}</a>
+        </dd>
+        <dt><span data-translate="bibalApp.reservation.oeuvre">Oeuvre</span></dt>
+        <dd>
+            <a ui-sref="oeuvre-detail({id:vm.reservation.oeuvre.id})">{{vm.reservation.oeuvre.id}}</a>
+        </dd>
     </dl>
 
     <button type="submit"

@@ -17,8 +17,7 @@
                 "title": "Exemplaire"
             },
             "etat": "Etat",
-            "oeuvre": "Oeuvre",
-            "emprunt": "Emprunt"
+            "oeuvre": "Oeuvre"
         }
     }
 }

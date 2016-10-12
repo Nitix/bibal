@@ -20,6 +20,8 @@
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
                     <th><span data-translate="bibalApp.reservation.dateReservation">Date Reservation</span></th>
+                    <th><span data-translate="bibalApp.reservation.usager">Usager</span></th>
+                    <th><span data-translate="bibalApp.reservation.oeuvre">Oeuvre</span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -27,6 +29,12 @@
                 <tr ng-repeat="reservation in vm.reservations track by reservation.id">
                     <td><a ui-sref="reservation-detail({id:reservation.id})">{{reservation.id}}</a></td>
                     <td>{{reservation.dateReservation | date:'medium'}}</td>
+                    <td>
+                        <a ui-sref="usager-detail({id:reservation.usager.id})">{{reservation.usager.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="oeuvre-detail({id:reservation.oeuvre.id})">{{reservation.oeuvre.id}}</a>
+                    </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

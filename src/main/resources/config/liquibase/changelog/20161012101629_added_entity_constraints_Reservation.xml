@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Reservation.
+    -->
+    <changeSet id="20161012101629-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="usager_id"
+                                 baseTableName="reservation"
+                                 constraintName="fk_reservation_usager_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="usager"/>
+
+        <addForeignKeyConstraint baseColumnNames="oeuvre_id"
+                                 baseTableName="reservation"
+                                 constraintName="fk_reservation_oeuvre_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="oeuvre"/>
+
+    </changeSet>
+</databaseChangeLog>

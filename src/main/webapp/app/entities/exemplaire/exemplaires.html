@@ -20,7 +20,7 @@
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
                     <th><span data-translate="bibalApp.exemplaire.etat">Etat</span></th>
-                    <th><span data-translate="bibalApp.exemplaire.emprunt">Emprunt</span></th>
+                    <th><span data-translate="bibalApp.exemplaire.oeuvre">Oeuvre</span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -29,7 +29,7 @@
                     <td><a ui-sref="exemplaire-detail({id:exemplaire.id})">{{exemplaire.id}}</a></td>
                     <td>{{exemplaire.etat}}</td>
                     <td>
-                        <a ui-sref="emprunt-detail({id:exemplaire.emprunt.id})">{{exemplaire.emprunt.id}}</a>
+                        <a ui-sref="oeuvre-detail({id:exemplaire.oeuvre.id})">{{exemplaire.oeuvre.id}}</a>
                     </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">

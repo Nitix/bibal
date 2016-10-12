@@ -18,8 +18,7 @@
             },
             "nom": "Nom",
             "prenom": "Prenom",
-            "dateNaissance": "Date Naissance",
-            "oeuvre": "Oeuvre"
+            "dateNaissance": "Date Naissance"
         }
     }
 }

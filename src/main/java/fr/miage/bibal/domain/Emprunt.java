@@ -1,6 +1,5 @@
 package fr.miage.bibal.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -8,8 +7,6 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.time.ZonedDateTime;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -33,15 +30,11 @@ public class Emprunt implements Serializable {
     @Column(name = "date_retour")
     private ZonedDateTime dateRetour;
 
-    @OneToMany(mappedBy = "emprunt")
-    @JsonIgnore
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Usager> usagers = new HashSet<>();
+    @ManyToOne
+    private Usager usager;
 
-    @OneToMany(mappedBy = "emprunt")
-    @JsonIgnore
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Exemplaire> exemplaires = new HashSet<>();
+    @ManyToOne
+    private Exemplaire exemplaire;
 
     public Long getId() {
         return id;
@@ -77,54 +70,30 @@ public class Emprunt implements Serializable {
         this.dateRetour = dateRetour;
     }
 
-    public Set<Usager> getUsagers() {
-        return usagers;
+    public Usager getUsager() {
+        return usager;
     }
 
-    public Emprunt usagers(Set<Usager> usagers) {
-        this.usagers = usagers;
+    public Emprunt usager(Usager usager) {
+        this.usager = usager;
         return this;
     }
 
-    public Emprunt addUsager(Usager usager) {
-        usagers.add(usager);
-        usager.setEmprunt(this);
+    public void setUsager(Usager usager) {
+        this.usager = usager;
+    }
+
+    public Exemplaire getExemplaire() {
+        return exemplaire;
+    }
+
+    public Emprunt exemplaire(Exemplaire exemplaire) {
+        this.exemplaire = exemplaire;
         return this;
     }
 
-    public Emprunt removeUsager(Usager usager) {
-        usagers.remove(usager);
-        usager.setEmprunt(null);
-        return this;
-    }
-
-    public void setUsagers(Set<Usager> usagers) {
-        this.usagers = usagers;
-    }
-
-    public Set<Exemplaire> getExemplaires() {
-        return exemplaires;
-    }
-
-    public Emprunt exemplaires(Set<Exemplaire> exemplaires) {
-        this.exemplaires = exemplaires;
-        return this;
-    }
-
-    public Emprunt addExemplaire(Exemplaire exemplaire) {
-        exemplaires.add(exemplaire);
-        exemplaire.setEmprunt(this);
-        return this;
-    }
-
-    public Emprunt removeExemplaire(Exemplaire exemplaire) {
-        exemplaires.remove(exemplaire);
-        exemplaire.setEmprunt(null);
-        return this;
-    }
-
-    public void setExemplaires(Set<Exemplaire> exemplaires) {
-        this.exemplaires = exemplaires;
+    public void setExemplaire(Exemplaire exemplaire) {
+        this.exemplaire = exemplaire;
     }
 
     @Override

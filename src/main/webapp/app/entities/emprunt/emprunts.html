@@ -21,6 +21,8 @@
                     <th><span data-translate="global.field.id">ID</span></th>
                     <th><span data-translate="bibalApp.emprunt.dateEmprunt">Date Emprunt</span></th>
                     <th><span data-translate="bibalApp.emprunt.dateRetour">Date Retour</span></th>
+                    <th><span data-translate="bibalApp.emprunt.usager">Usager</span></th>
+                    <th><span data-translate="bibalApp.emprunt.exemplaire">Exemplaire</span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -29,6 +31,12 @@
                     <td><a ui-sref="emprunt-detail({id:emprunt.id})">{{emprunt.id}}</a></td>
                     <td>{{emprunt.dateEmprunt | date:'medium'}}</td>
                     <td>{{emprunt.dateRetour | date:'medium'}}</td>
+                    <td>
+                        <a ui-sref="usager-detail({id:emprunt.usager.id})">{{emprunt.usager.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="exemplaire-detail({id:emprunt.exemplaire.id})">{{emprunt.exemplaire.id}}</a>
+                    </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

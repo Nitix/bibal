@@ -29,6 +29,14 @@
                 <constraints nullable="true" />
             </column>
             
+            <column name="usager_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="exemplaire_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
             <!-- jhipster-needle-liquibase-add-column - Jhipster will add columns here, do not remove-->
         </createTable>
         <dropDefaultValue tableName="emprunt" columnName="date_emprunt" columnDataType="datetime"/>

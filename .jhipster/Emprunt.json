@@ -2,16 +2,16 @@
     "fluentMethods": true,
     "relationships": [
         {
-            "relationshipType": "one-to-many",
+            "relationshipType": "many-to-one",
             "relationshipName": "usager",
             "otherEntityName": "usager",
-            "otherEntityRelationshipName": "emprunt"
+            "otherEntityField": "id"
         },
         {
-            "relationshipType": "one-to-many",
+            "relationshipType": "many-to-one",
             "relationshipName": "exemplaire",
             "otherEntityName": "exemplaire",
-            "otherEntityRelationshipName": "emprunt"
+            "otherEntityField": "id"
         }
     ],
     "fields": [

@@ -19,9 +19,7 @@
             "nom": "Nom",
             "prenom": "Prenom",
             "dateNaissance": "Date Naissance",
-            "adresse": "Adresse",
-            "emprunt": "Emprunt",
-            "reservation": "Reservation"
+            "adresse": "Adresse"
         }
     }
 }

@@ -5,9 +5,9 @@
         .module('bibalApp')
         .controller('OeuvreDialogController', OeuvreDialogController);
 
-    OeuvreDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Oeuvre', 'Exemplaire', 'Auteur', 'Reservation'];
+    OeuvreDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Oeuvre', 'Auteur'];
 
-    function OeuvreDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Oeuvre, Exemplaire, Auteur, Reservation) {
+    function OeuvreDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Oeuvre, Auteur) {
         var vm = this;
 
         vm.oeuvre = entity;
@@ -15,9 +15,7 @@
         vm.datePickerOpenStatus = {};
         vm.openCalendar = openCalendar;
         vm.save = save;
-        vm.exemplaires = Exemplaire.query();
         vm.auteurs = Auteur.query();
-        vm.reservations = Reservation.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

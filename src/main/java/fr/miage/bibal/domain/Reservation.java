@@ -1,6 +1,5 @@
 package fr.miage.bibal.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -8,8 +7,6 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.time.ZonedDateTime;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -30,15 +27,11 @@ public class Reservation implements Serializable {
     @Column(name = "date_reservation", nullable = false)
     private ZonedDateTime dateReservation;
 
-    @OneToMany(mappedBy = "reservation")
-    @JsonIgnore
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Usager> usagers = new HashSet<>();
+    @ManyToOne
+    private Usager usager;
 
-    @OneToMany(mappedBy = "reservation")
-    @JsonIgnore
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Oeuvre> oeuvres = new HashSet<>();
+    @ManyToOne
+    private Oeuvre oeuvre;
 
     public Long getId() {
         return id;
@@ -61,54 +54,30 @@ public class Reservation implements Serializable {
         this.dateReservation = dateReservation;
     }
 
-    public Set<Usager> getUsagers() {
-        return usagers;
+    public Usager getUsager() {
+        return usager;
     }
 
-    public Reservation usagers(Set<Usager> usagers) {
-        this.usagers = usagers;
+    public Reservation usager(Usager usager) {
+        this.usager = usager;
         return this;
     }
 
-    public Reservation addUsager(Usager usager) {
-        usagers.add(usager);
-        usager.setReservation(this);
+    public void setUsager(Usager usager) {
+        this.usager = usager;
+    }
+
+    public Oeuvre getOeuvre() {
+        return oeuvre;
+    }
+
+    public Reservation oeuvre(Oeuvre oeuvre) {
+        this.oeuvre = oeuvre;
         return this;
     }
 
-    public Reservation removeUsager(Usager usager) {
-        usagers.remove(usager);
-        usager.setReservation(null);
-        return this;
-    }
-
-    public void setUsagers(Set<Usager> usagers) {
-        this.usagers = usagers;
-    }
-
-    public Set<Oeuvre> getOeuvres() {
-        return oeuvres;
-    }
-
-    public Reservation oeuvres(Set<Oeuvre> oeuvres) {
-        this.oeuvres = oeuvres;
-        return this;
-    }
-
-    public Reservation addOeuvre(Oeuvre oeuvre) {
-        oeuvres.add(oeuvre);
-        oeuvre.setReservation(this);
-        return this;
-    }
-
-    public Reservation removeOeuvre(Oeuvre oeuvre) {
-        oeuvres.remove(oeuvre);
-        oeuvre.setReservation(null);
-        return this;
-    }
-
-    public void setOeuvres(Set<Oeuvre> oeuvres) {
-        this.oeuvres = oeuvres;
+    public void setOeuvre(Oeuvre oeuvre) {
+        this.oeuvre = oeuvre;
     }
 
     @Override

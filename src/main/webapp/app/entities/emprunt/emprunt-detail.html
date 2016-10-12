@@ -12,6 +12,14 @@
         <dd>
             <span>{{vm.emprunt.dateRetour | date:'medium'}}</span>
         </dd>
+        <dt><span data-translate="bibalApp.emprunt.usager">Usager</span></dt>
+        <dd>
+            <a ui-sref="usager-detail({id:vm.emprunt.usager.id})">{{vm.emprunt.usager.id}}</a>
+        </dd>
+        <dt><span data-translate="bibalApp.emprunt.exemplaire">Exemplaire</span></dt>
+        <dd>
+            <a ui-sref="exemplaire-detail({id:vm.emprunt.exemplaire.id})">{{vm.emprunt.exemplaire.id}}</a>
+        </dd>
     </dl>
 
     <button type="submit"

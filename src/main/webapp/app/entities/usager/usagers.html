@@ -23,8 +23,6 @@
                     <th><span data-translate="bibalApp.usager.prenom">Prenom</span></th>
                     <th><span data-translate="bibalApp.usager.dateNaissance">Date Naissance</span></th>
                     <th><span data-translate="bibalApp.usager.adresse">Adresse</span></th>
-                    <th><span data-translate="bibalApp.usager.emprunt">Emprunt</span></th>
-                    <th><span data-translate="bibalApp.usager.reservation">Reservation</span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -35,12 +33,6 @@
                     <td>{{usager.prenom}}</td>
                     <td>{{usager.dateNaissance | date:'medium'}}</td>
                     <td>{{usager.adresse}}</td>
-                    <td>
-                        <a ui-sref="emprunt-detail({id:usager.emprunt.id})">{{usager.emprunt.id}}</a>
-                    </td>
-                    <td>
-                        <a ui-sref="reservation-detail({id:usager.reservation.id})">{{usager.reservation.id}}</a>
-                    </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

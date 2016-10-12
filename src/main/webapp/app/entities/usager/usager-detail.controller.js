@@ -5,9 +5,9 @@
         .module('bibalApp')
         .controller('UsagerDetailController', UsagerDetailController);
 
-    UsagerDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Usager', 'Emprunt', 'Reservation'];
+    UsagerDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Usager'];
 
-    function UsagerDetailController($scope, $rootScope, $stateParams, previousState, entity, Usager, Emprunt, Reservation) {
+    function UsagerDetailController($scope, $rootScope, $stateParams, previousState, entity, Usager) {
         var vm = this;
 
         vm.usager = entity;

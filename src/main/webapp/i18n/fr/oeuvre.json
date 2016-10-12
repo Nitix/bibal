@@ -25,9 +25,7 @@
             "parution": "Parution",
             "periodicite": "Periodicite",
             "estLivre": "Est Livre",
-            "exemplaire": "Exemplaire",
-            "auteur": "Auteur",
-            "reservation": "Reservation"
+            "auteur": "Auteur"
         }
     }
 }

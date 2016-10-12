@@ -105,14 +105,8 @@
         </div>
 
         <div class="form-group">
-            <label data-translate="bibalApp.oeuvre.exemplaire" for="field_exemplaire">Exemplaire</label>
-            <select class="form-control" id="field_exemplaire" name="exemplaire" ng-model="vm.oeuvre.exemplaire" ng-options="exemplaire as exemplaire.id for exemplaire in vm.exemplaires track by exemplaire.id">
-                <option value=""></option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label data-translate="bibalApp.oeuvre.reservation" for="field_reservation">Reservation</label>
-            <select class="form-control" id="field_reservation" name="reservation" ng-model="vm.oeuvre.reservation" ng-options="reservation as reservation.id for reservation in vm.reservations track by reservation.id">
+            <label data-translate="bibalApp.oeuvre.auteur" for="field_auteur">Auteur</label>
+            <select class="form-control" id="field_auteur" name="auteur" ng-model="vm.oeuvre.auteur" ng-options="auteur as auteur.id for auteur in vm.auteurs track by auteur.id">
                 <option value=""></option>
             </select>
         </div>

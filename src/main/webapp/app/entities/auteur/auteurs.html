@@ -22,7 +22,6 @@
                     <th><span data-translate="bibalApp.auteur.nom">Nom</span></th>
                     <th><span data-translate="bibalApp.auteur.prenom">Prenom</span></th>
                     <th><span data-translate="bibalApp.auteur.dateNaissance">Date Naissance</span></th>
-                    <th><span data-translate="bibalApp.auteur.oeuvre">Oeuvre</span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -32,9 +31,6 @@
                     <td>{{auteur.nom}}</td>
                     <td>{{auteur.prenom}}</td>
                     <td>{{auteur.dateNaissance | date:'medium'}}</td>
-                    <td>
-                        <a ui-sref="oeuvre-detail({id:auteur.oeuvre.id})">{{auteur.oeuvre.id}}</a>
-                    </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

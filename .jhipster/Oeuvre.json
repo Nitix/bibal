@@ -2,21 +2,9 @@
     "fluentMethods": true,
     "relationships": [
         {
-            "relationshipName": "exemplaire",
-            "otherEntityName": "exemplaire",
             "relationshipType": "many-to-one",
-            "otherEntityField": "id"
-        },
-        {
-            "relationshipType": "one-to-many",
             "relationshipName": "auteur",
             "otherEntityName": "auteur",
-            "otherEntityRelationshipName": "oeuvre"
-        },
-        {
-            "relationshipName": "reservation",
-            "otherEntityName": "reservation",
-            "relationshipType": "many-to-one",
             "otherEntityField": "id"
         }
     ],

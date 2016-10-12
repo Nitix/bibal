@@ -2,16 +2,16 @@
     "fluentMethods": true,
     "relationships": [
         {
-            "relationshipType": "one-to-many",
+            "relationshipType": "many-to-one",
             "relationshipName": "usager",
             "otherEntityName": "usager",
-            "otherEntityRelationshipName": "reservation"
+            "otherEntityField": "id"
         },
         {
-            "relationshipType": "one-to-many",
+            "relationshipType": "many-to-one",
             "relationshipName": "oeuvre",
             "otherEntityName": "oeuvre",
-            "otherEntityRelationshipName": "reservation"
+            "otherEntityField": "id"
         }
     ],
     "fields": [

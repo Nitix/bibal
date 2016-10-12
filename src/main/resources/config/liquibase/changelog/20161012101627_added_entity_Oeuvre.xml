@@ -57,11 +57,7 @@
                 <constraints nullable="false" />
             </column>
             
-            <column name="exemplaire_id" type="bigint">
-                <constraints nullable="true" />
-            </column>
-
-            <column name="reservation_id" type="bigint">
+            <column name="auteur_id" type="bigint">
                 <constraints nullable="true" />
             </column>
 

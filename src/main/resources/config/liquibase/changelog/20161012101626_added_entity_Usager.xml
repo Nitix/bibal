@@ -37,14 +37,6 @@
                 <constraints nullable="false" />
             </column>
             
-            <column name="emprunt_id" type="bigint">
-                <constraints nullable="true" />
-            </column>
-
-            <column name="reservation_id" type="bigint">
-                <constraints nullable="true" />
-            </column>
-
             <!-- jhipster-needle-liquibase-add-column - Jhipster will add columns here, do not remove-->
         </createTable>
         <dropDefaultValue tableName="usager" columnName="date_naissance" columnDataType="datetime"/>

@@ -35,9 +35,6 @@ public class Auteur implements Serializable {
     @Column(name = "date_naissance", nullable = false)
     private ZonedDateTime dateNaissance;
 
-    @ManyToOne
-    private Oeuvre oeuvre;
-
     public Long getId() {
         return id;
     }
@@ -83,19 +80,6 @@ public class Auteur implements Serializable {
 
     public void setDateNaissance(ZonedDateTime dateNaissance) {
         this.dateNaissance = dateNaissance;
-    }
-
-    public Oeuvre getOeuvre() {
-        return oeuvre;
-    }
-
-    public Auteur oeuvre(Oeuvre oeuvre) {
-        this.oeuvre = oeuvre;
-        return this;
-    }
-
-    public void setOeuvre(Oeuvre oeuvre) {
-        this.oeuvre = oeuvre;
     }
 
     @Override

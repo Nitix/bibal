@@ -1,14 +1,11 @@
 package fr.miage.bibal.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -29,13 +26,8 @@ public class Exemplaire implements Serializable {
     @Column(name = "etat", nullable = false)
     private String etat;
 
-    @OneToMany(mappedBy = "exemplaire")
-    @JsonIgnore
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Oeuvre> oeuvres = new HashSet<>();
-
     @ManyToOne
-    private Emprunt emprunt;
+    private Oeuvre oeuvre;
 
     public Long getId() {
         return id;
@@ -58,42 +50,17 @@ public class Exemplaire implements Serializable {
         this.etat = etat;
     }
 
-    public Set<Oeuvre> getOeuvres() {
-        return oeuvres;
+    public Oeuvre getOeuvre() {
+        return oeuvre;
     }
 
-    public Exemplaire oeuvres(Set<Oeuvre> oeuvres) {
-        this.oeuvres = oeuvres;
+    public Exemplaire oeuvre(Oeuvre oeuvre) {
+        this.oeuvre = oeuvre;
         return this;
     }
 
-    public Exemplaire addOeuvre(Oeuvre oeuvre) {
-        oeuvres.add(oeuvre);
-        oeuvre.setExemplaire(this);
-        return this;
-    }
-
-    public Exemplaire removeOeuvre(Oeuvre oeuvre) {
-        oeuvres.remove(oeuvre);
-        oeuvre.setExemplaire(null);
-        return this;
-    }
-
-    public void setOeuvres(Set<Oeuvre> oeuvres) {
-        this.oeuvres = oeuvres;
-    }
-
-    public Emprunt getEmprunt() {
-        return emprunt;
-    }
-
-    public Exemplaire emprunt(Emprunt emprunt) {
-        this.emprunt = emprunt;
-        return this;
-    }
-
-    public void setEmprunt(Emprunt emprunt) {
-        this.emprunt = emprunt;
+    public void setOeuvre(Oeuvre oeuvre) {
+        this.oeuvre = oeuvre;
     }
 
     @Override

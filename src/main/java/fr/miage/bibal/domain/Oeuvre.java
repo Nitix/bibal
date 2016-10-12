@@ -1,6 +1,5 @@
 package fr.miage.bibal.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -8,8 +7,6 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.time.ZonedDateTime;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -58,15 +55,7 @@ public class Oeuvre implements Serializable {
     private Boolean estLivre;
 
     @ManyToOne
-    private Exemplaire exemplaire;
-
-    @OneToMany(mappedBy = "oeuvre")
-    @JsonIgnore
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Auteur> auteurs = new HashSet<>();
-
-    @ManyToOne
-    private Reservation reservation;
+    private Auteur auteur;
 
     public Long getId() {
         return id;
@@ -193,55 +182,17 @@ public class Oeuvre implements Serializable {
         this.estLivre = estLivre;
     }
 
-    public Exemplaire getExemplaire() {
-        return exemplaire;
+    public Auteur getAuteur() {
+        return auteur;
     }
 
-    public Oeuvre exemplaire(Exemplaire exemplaire) {
-        this.exemplaire = exemplaire;
+    public Oeuvre auteur(Auteur auteur) {
+        this.auteur = auteur;
         return this;
     }
 
-    public void setExemplaire(Exemplaire exemplaire) {
-        this.exemplaire = exemplaire;
-    }
-
-    public Set<Auteur> getAuteurs() {
-        return auteurs;
-    }
-
-    public Oeuvre auteurs(Set<Auteur> auteurs) {
-        this.auteurs = auteurs;
-        return this;
-    }
-
-    public Oeuvre addAuteur(Auteur auteur) {
-        auteurs.add(auteur);
-        auteur.setOeuvre(this);
-        return this;
-    }
-
-    public Oeuvre removeAuteur(Auteur auteur) {
-        auteurs.remove(auteur);
-        auteur.setOeuvre(null);
-        return this;
-    }
-
-    public void setAuteurs(Set<Auteur> auteurs) {
-        this.auteurs = auteurs;
-    }
-
-    public Reservation getReservation() {
-        return reservation;
-    }
-
-    public Oeuvre reservation(Reservation reservation) {
-        this.reservation = reservation;
-        return this;
-    }
-
-    public void setReservation(Reservation reservation) {
-        this.reservation = reservation;
+    public void setAuteur(Auteur auteur) {
+        this.auteur = auteur;
     }
 
     @Override

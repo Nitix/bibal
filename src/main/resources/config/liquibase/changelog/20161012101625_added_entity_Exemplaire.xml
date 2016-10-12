@@ -25,7 +25,7 @@
                 <constraints nullable="false" />
             </column>
             
-            <column name="emprunt_id" type="bigint">
+            <column name="oeuvre_id" type="bigint">
                 <constraints nullable="true" />
             </column>
 

@@ -5,9 +5,9 @@
         .module('bibalApp')
         .controller('AuteurDetailController', AuteurDetailController);
 
-    AuteurDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Auteur', 'Oeuvre'];
+    AuteurDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Auteur'];
 
-    function AuteurDetailController($scope, $rootScope, $stateParams, previousState, entity, Auteur, Oeuvre) {
+    function AuteurDetailController($scope, $rootScope, $stateParams, previousState, entity, Auteur) {
         var vm = this;
 
         vm.auteur = entity;

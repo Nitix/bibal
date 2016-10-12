@@ -39,12 +39,6 @@ public class Usager implements Serializable {
     @Column(name = "adresse", nullable = false)
     private String adresse;
 
-    @ManyToOne
-    private Emprunt emprunt;
-
-    @ManyToOne
-    private Reservation reservation;
-
     public Long getId() {
         return id;
     }
@@ -103,32 +97,6 @@ public class Usager implements Serializable {
 
     public void setAdresse(String adresse) {
         this.adresse = adresse;
-    }
-
-    public Emprunt getEmprunt() {
-        return emprunt;
-    }
-
-    public Usager emprunt(Emprunt emprunt) {
-        this.emprunt = emprunt;
-        return this;
-    }
-
-    public void setEmprunt(Emprunt emprunt) {
-        this.emprunt = emprunt;
-    }
-
-    public Reservation getReservation() {
-        return reservation;
-    }
-
-    public Usager reservation(Reservation reservation) {
-        this.reservation = reservation;
-        return this;
-    }
-
-    public void setReservation(Reservation reservation) {
-        this.reservation = reservation;
     }
 
     @Override

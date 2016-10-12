@@ -40,13 +40,9 @@
         <dd>
             <span>{{vm.oeuvre.estLivre}}</span>
         </dd>
-        <dt><span data-translate="bibalApp.oeuvre.exemplaire">Exemplaire</span></dt>
+        <dt><span data-translate="bibalApp.oeuvre.auteur">Auteur</span></dt>
         <dd>
-            <a ui-sref="exemplaire-detail({id:vm.oeuvre.exemplaire.id})">{{vm.oeuvre.exemplaire.id}}</a>
-        </dd>
-        <dt><span data-translate="bibalApp.oeuvre.reservation">Reservation</span></dt>
-        <dd>
-            <a ui-sref="reservation-detail({id:vm.oeuvre.reservation.id})">{{vm.oeuvre.reservation.id}}</a>
+            <a ui-sref="auteur-detail({id:vm.oeuvre.auteur.id})">{{vm.oeuvre.auteur.id}}</a>
         </dd>
     </dl>
 

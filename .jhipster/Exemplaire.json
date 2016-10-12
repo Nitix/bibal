@@ -2,15 +2,9 @@
     "fluentMethods": true,
     "relationships": [
         {
-            "relationshipType": "one-to-many",
+            "relationshipType": "many-to-one",
             "relationshipName": "oeuvre",
             "otherEntityName": "oeuvre",
-            "otherEntityRelationshipName": "exemplaire"
-        },
-        {
-            "relationshipName": "emprunt",
-            "otherEntityName": "emprunt",
-            "relationshipType": "many-to-one",
             "otherEntityField": "id"
         }
     ],

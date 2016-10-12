@@ -8,17 +8,11 @@
     -->
     <changeSet id="20161012101627-2" author="jhipster">
         
-        <addForeignKeyConstraint baseColumnNames="exemplaire_id"
+        <addForeignKeyConstraint baseColumnNames="auteur_id"
                                  baseTableName="oeuvre"
-                                 constraintName="fk_oeuvre_exemplaire_id"
+                                 constraintName="fk_oeuvre_auteur_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="exemplaire"/>
-
-        <addForeignKeyConstraint baseColumnNames="reservation_id"
-                                 baseTableName="oeuvre"
-                                 constraintName="fk_oeuvre_reservation_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="reservation"/>
+                                 referencedTableName="auteur"/>
 
     </changeSet>
 </databaseChangeLog>

@@ -36,26 +36,26 @@ entity Auteur {
     dateNaissance ZonedDateTime required
 }
 
-relationship OneToMany {
-	Exemplaire{oeuvre} to Oeuvre 
+relationship ManyToOne  {
+	Exemplaire{Oeuvre} to Oeuvre
 }
 
-relationship OneToMany {
-	Reservation{usager} to Usager 
+relationship ManyToOne {
+	Reservation{Usager} to Usager
 }
 
-relationship OneToMany {
-	Emprunt{usager} to Usager 
+relationship ManyToOne {
+	Emprunt{Usager} to Usager
 }
 
-relationship OneToMany {
-	Emprunt{exemplaire} to Exemplaire 
+relationship ManyToOne {
+	Emprunt{Exemplaire} to Exemplaire
 }
 
-relationship OneToMany {
-	Oeuvre{auteur} to Auteur
+relationship ManyToOne {
+	Oeuvre{Auteur} to Auteur
 }
 
-relationship OneToMany {
-	Reservation{oeuvre} to Oeuvre
+relationship ManyToOne {
+	Reservation{Oeuvre} to Oeuvre
 }
