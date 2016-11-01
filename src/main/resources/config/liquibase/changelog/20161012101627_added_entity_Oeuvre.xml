@@ -33,11 +33,11 @@
                 <constraints nullable="false" />
             </column>
             
-            <column name="data_publication" type="timestamp">
+            <column name="data_publication" type="date">
                 <constraints nullable="true" />
             </column>
             
-            <column name="date_edition" type="timestamp">
+            <column name="date_edition" type="date">
                 <constraints nullable="true" />
             </column>
             
@@ -45,7 +45,7 @@
                 <constraints nullable="true" />
             </column>
             
-            <column name="parution" type="timestamp">
+            <column name="parution" type="date">
                 <constraints nullable="true" />
             </column>
             
@@ -63,9 +63,6 @@
 
             <!-- jhipster-needle-liquibase-add-column - Jhipster will add columns here, do not remove-->
         </createTable>
-        <dropDefaultValue tableName="oeuvre" columnName="data_publication" columnDataType="datetime"/>
-        <dropDefaultValue tableName="oeuvre" columnName="date_edition" columnDataType="datetime"/>
-        <dropDefaultValue tableName="oeuvre" columnName="parution" columnDataType="datetime"/>
         
     </changeSet>
 </databaseChangeLog>

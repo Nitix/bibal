@@ -33,11 +33,11 @@
         },
         {
             "fieldName": "dataPublication",
-            "fieldType": "ZonedDateTime"
+            "fieldType": "LocalDate"
         },
         {
             "fieldName": "dateEdition",
-            "fieldType": "ZonedDateTime"
+            "fieldType": "LocalDate"
         },
         {
             "fieldName": "numero",
@@ -45,7 +45,7 @@
         },
         {
             "fieldName": "parution",
-            "fieldType": "ZonedDateTime"
+            "fieldType": "LocalDate"
         },
         {
             "fieldName": "periodicite",

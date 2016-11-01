@@ -29,7 +29,7 @@
                 <constraints nullable="false" />
             </column>
             
-            <column name="date_naissance" type="timestamp">
+            <column name="date_naissance" type="date">
                 <constraints nullable="false" />
             </column>
             
@@ -39,7 +39,6 @@
             
             <!-- jhipster-needle-liquibase-add-column - Jhipster will add columns here, do not remove-->
         </createTable>
-        <dropDefaultValue tableName="usager" columnName="date_naissance" columnDataType="datetime"/>
         
     </changeSet>
 </databaseChangeLog>

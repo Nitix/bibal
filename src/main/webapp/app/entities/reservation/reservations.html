@@ -33,7 +33,7 @@
                         <a ui-sref="usager-detail({id:reservation.usager.id})">{{reservation.usager.id}}</a>
                     </td>
                     <td>
-                        <a ui-sref="oeuvre-detail({id:reservation.oeuvre.id})">{{reservation.oeuvre.id}}</a>
+                        <a ui-sref="oeuvre-detail({id:reservation.oeuvre.id})">{{reservation.oeuvre.id}} : {{reservation.oeuvre.titre}} ({{reservation.oeuvre.auteur.nom}} {{reservation.oeuvre.auteur.prenom}})</a>
                     </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">

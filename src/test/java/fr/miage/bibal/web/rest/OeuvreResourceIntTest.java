@@ -24,9 +24,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import java.time.Instant;
-import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
+import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.List;
 
@@ -52,20 +50,17 @@ public class OeuvreResourceIntTest {
     private static final String DEFAULT_DESCRIPTION = "AAAAA";
     private static final String UPDATED_DESCRIPTION = "BBBBB";
 
-    private static final ZonedDateTime DEFAULT_DATA_PUBLICATION = ZonedDateTime.ofInstant(Instant.ofEpochMilli(0L), ZoneId.systemDefault());
-    private static final ZonedDateTime UPDATED_DATA_PUBLICATION = ZonedDateTime.now(ZoneId.systemDefault()).withNano(0);
-    private static final String DEFAULT_DATA_PUBLICATION_STR = DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(DEFAULT_DATA_PUBLICATION);
+    private static final LocalDate DEFAULT_DATA_PUBLICATION = LocalDate.ofEpochDay(0L);
+    private static final LocalDate UPDATED_DATA_PUBLICATION = LocalDate.now(ZoneId.systemDefault());
 
-    private static final ZonedDateTime DEFAULT_DATE_EDITION = ZonedDateTime.ofInstant(Instant.ofEpochMilli(0L), ZoneId.systemDefault());
-    private static final ZonedDateTime UPDATED_DATE_EDITION = ZonedDateTime.now(ZoneId.systemDefault()).withNano(0);
-    private static final String DEFAULT_DATE_EDITION_STR = DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(DEFAULT_DATE_EDITION);
+    private static final LocalDate DEFAULT_DATE_EDITION = LocalDate.ofEpochDay(0L);
+    private static final LocalDate UPDATED_DATE_EDITION = LocalDate.now(ZoneId.systemDefault());
 
     private static final Integer DEFAULT_NUMERO = 1;
     private static final Integer UPDATED_NUMERO = 2;
 
-    private static final ZonedDateTime DEFAULT_PARUTION = ZonedDateTime.ofInstant(Instant.ofEpochMilli(0L), ZoneId.systemDefault());
-    private static final ZonedDateTime UPDATED_PARUTION = ZonedDateTime.now(ZoneId.systemDefault()).withNano(0);
-    private static final String DEFAULT_PARUTION_STR = DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(DEFAULT_PARUTION);
+    private static final LocalDate DEFAULT_PARUTION = LocalDate.ofEpochDay(0L);
+    private static final LocalDate UPDATED_PARUTION = LocalDate.now(ZoneId.systemDefault());
 
     private static final Integer DEFAULT_PERIODICITE = 1;
     private static final Integer UPDATED_PERIODICITE = 2;
@@ -242,10 +237,10 @@ public class OeuvreResourceIntTest {
                 .andExpect(jsonPath("$.[*].titre").value(hasItem(DEFAULT_TITRE.toString())))
                 .andExpect(jsonPath("$.[*].editeur").value(hasItem(DEFAULT_EDITEUR.toString())))
                 .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION.toString())))
-                .andExpect(jsonPath("$.[*].dataPublication").value(hasItem(DEFAULT_DATA_PUBLICATION_STR)))
-                .andExpect(jsonPath("$.[*].dateEdition").value(hasItem(DEFAULT_DATE_EDITION_STR)))
+                .andExpect(jsonPath("$.[*].dataPublication").value(hasItem(DEFAULT_DATA_PUBLICATION.toString())))
+                .andExpect(jsonPath("$.[*].dateEdition").value(hasItem(DEFAULT_DATE_EDITION.toString())))
                 .andExpect(jsonPath("$.[*].numero").value(hasItem(DEFAULT_NUMERO)))
-                .andExpect(jsonPath("$.[*].parution").value(hasItem(DEFAULT_PARUTION_STR)))
+                .andExpect(jsonPath("$.[*].parution").value(hasItem(DEFAULT_PARUTION.toString())))
                 .andExpect(jsonPath("$.[*].periodicite").value(hasItem(DEFAULT_PERIODICITE)))
                 .andExpect(jsonPath("$.[*].estLivre").value(hasItem(DEFAULT_EST_LIVRE.booleanValue())));
     }
@@ -264,10 +259,10 @@ public class OeuvreResourceIntTest {
             .andExpect(jsonPath("$.titre").value(DEFAULT_TITRE.toString()))
             .andExpect(jsonPath("$.editeur").value(DEFAULT_EDITEUR.toString()))
             .andExpect(jsonPath("$.description").value(DEFAULT_DESCRIPTION.toString()))
-            .andExpect(jsonPath("$.dataPublication").value(DEFAULT_DATA_PUBLICATION_STR))
-            .andExpect(jsonPath("$.dateEdition").value(DEFAULT_DATE_EDITION_STR))
+            .andExpect(jsonPath("$.dataPublication").value(DEFAULT_DATA_PUBLICATION.toString()))
+            .andExpect(jsonPath("$.dateEdition").value(DEFAULT_DATE_EDITION.toString()))
             .andExpect(jsonPath("$.numero").value(DEFAULT_NUMERO))
-            .andExpect(jsonPath("$.parution").value(DEFAULT_PARUTION_STR))
+            .andExpect(jsonPath("$.parution").value(DEFAULT_PARUTION.toString()))
             .andExpect(jsonPath("$.periodicite").value(DEFAULT_PERIODICITE))
             .andExpect(jsonPath("$.estLivre").value(DEFAULT_EST_LIVRE.booleanValue()));
     }

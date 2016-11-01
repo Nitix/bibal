@@ -23,9 +23,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import java.time.Instant;
-import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
+import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.List;
 
@@ -48,9 +46,8 @@ public class AuteurResourceIntTest {
     private static final String DEFAULT_PRENOM = "AAAAA";
     private static final String UPDATED_PRENOM = "BBBBB";
 
-    private static final ZonedDateTime DEFAULT_DATE_NAISSANCE = ZonedDateTime.ofInstant(Instant.ofEpochMilli(0L), ZoneId.systemDefault());
-    private static final ZonedDateTime UPDATED_DATE_NAISSANCE = ZonedDateTime.now(ZoneId.systemDefault()).withNano(0);
-    private static final String DEFAULT_DATE_NAISSANCE_STR = DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(DEFAULT_DATE_NAISSANCE);
+    private static final LocalDate DEFAULT_DATE_NAISSANCE = LocalDate.ofEpochDay(0L);
+    private static final LocalDate UPDATED_DATE_NAISSANCE = LocalDate.now(ZoneId.systemDefault());
 
     @Inject
     private AuteurRepository auteurRepository;
@@ -185,7 +182,7 @@ public class AuteurResourceIntTest {
                 .andExpect(jsonPath("$.[*].id").value(hasItem(auteur.getId().intValue())))
                 .andExpect(jsonPath("$.[*].nom").value(hasItem(DEFAULT_NOM.toString())))
                 .andExpect(jsonPath("$.[*].prenom").value(hasItem(DEFAULT_PRENOM.toString())))
-                .andExpect(jsonPath("$.[*].dateNaissance").value(hasItem(DEFAULT_DATE_NAISSANCE_STR)));
+                .andExpect(jsonPath("$.[*].dateNaissance").value(hasItem(DEFAULT_DATE_NAISSANCE.toString())));
     }
 
     @Test
@@ -201,7 +198,7 @@ public class AuteurResourceIntTest {
             .andExpect(jsonPath("$.id").value(auteur.getId().intValue()))
             .andExpect(jsonPath("$.nom").value(DEFAULT_NOM.toString()))
             .andExpect(jsonPath("$.prenom").value(DEFAULT_PRENOM.toString()))
-            .andExpect(jsonPath("$.dateNaissance").value(DEFAULT_DATE_NAISSANCE_STR));
+            .andExpect(jsonPath("$.dateNaissance").value(DEFAULT_DATE_NAISSANCE.toString()));
     }
 
     @Test

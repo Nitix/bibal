@@ -18,11 +18,11 @@
         </dd>
         <dt><span data-translate="bibalApp.oeuvre.dataPublication">Data Publication</span></dt>
         <dd>
-            <span>{{vm.oeuvre.dataPublication | date:'medium'}}</span>
+            <span>{{vm.oeuvre.dataPublication | date:'mediumDate'}}</span>
         </dd>
         <dt><span data-translate="bibalApp.oeuvre.dateEdition">Date Edition</span></dt>
         <dd>
-            <span>{{vm.oeuvre.dateEdition | date:'medium'}}</span>
+            <span>{{vm.oeuvre.dateEdition | date:'mediumDate'}}</span>
         </dd>
         <dt><span data-translate="bibalApp.oeuvre.numero">Numero</span></dt>
         <dd>
@@ -30,7 +30,7 @@
         </dd>
         <dt><span data-translate="bibalApp.oeuvre.parution">Parution</span></dt>
         <dd>
-            <span>{{vm.oeuvre.parution | date:'medium'}}</span>
+            <span>{{vm.oeuvre.parution | date:'mediumDate'}}</span>
         </dd>
         <dt><span data-translate="bibalApp.oeuvre.periodicite">Periodicite</span></dt>
         <dd>
@@ -42,7 +42,7 @@
         </dd>
         <dt><span data-translate="bibalApp.oeuvre.auteur">Auteur</span></dt>
         <dd>
-            <a ui-sref="auteur-detail({id:vm.oeuvre.auteur.id})">{{vm.oeuvre.auteur.id}}</a>
+            <a ui-sref="auteur-detail({id:vm.oeuvre.auteur.id})">{{vm.oeuvre.auteur.id}} : {{vm.oeuvre.auteur.nom}} {{vm.oeuvre.auteur.prenom}}</a>
         </dd>
     </dl>
 

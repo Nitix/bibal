@@ -32,10 +32,10 @@
                     <td>{{emprunt.dateEmprunt | date:'medium'}}</td>
                     <td>{{emprunt.dateRetour | date:'medium'}}</td>
                     <td>
-                        <a ui-sref="usager-detail({id:emprunt.usager.id})">{{emprunt.usager.id}}</a>
+                        <a ui-sref="usager-detail({id:emprunt.usager.id})">{{emprunt.usager.id}} : {{emprunt.usager.nom}} {{emprunt.usager.prenom}}</a>
                     </td>
                     <td>
-                        <a ui-sref="exemplaire-detail({id:emprunt.exemplaire.id})">{{emprunt.exemplaire.id}}</a>
+                        <a ui-sref="exemplaire-detail({id:emprunt.exemplaire.id})">{{emprunt.exemplaire.id}} : {{emprunt.exemplaire.etat}} - {{emprunt.exemplaire.oeuvre.id}} : {{emprunt.exemplaire.oeuvre.titre}} ({{emprunt.exemplaire.oeuvre.auteur.nom}} {{emprunt.exemplaire.oeuvre.auteur.prenom}})</a>
                     </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">

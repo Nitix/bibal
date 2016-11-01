@@ -6,7 +6,7 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.io.Serializable;
-import java.time.ZonedDateTime;
+import java.time.LocalDate;
 import java.util.Objects;
 
 /**
@@ -36,16 +36,16 @@ public class Oeuvre implements Serializable {
     private String description;
 
     @Column(name = "data_publication")
-    private ZonedDateTime dataPublication;
+    private LocalDate dataPublication;
 
     @Column(name = "date_edition")
-    private ZonedDateTime dateEdition;
+    private LocalDate dateEdition;
 
     @Column(name = "numero")
     private Integer numero;
 
     @Column(name = "parution")
-    private ZonedDateTime parution;
+    private LocalDate parution;
 
     @Column(name = "periodicite")
     private Integer periodicite;
@@ -105,29 +105,29 @@ public class Oeuvre implements Serializable {
         this.description = description;
     }
 
-    public ZonedDateTime getDataPublication() {
+    public LocalDate getDataPublication() {
         return dataPublication;
     }
 
-    public Oeuvre dataPublication(ZonedDateTime dataPublication) {
+    public Oeuvre dataPublication(LocalDate dataPublication) {
         this.dataPublication = dataPublication;
         return this;
     }
 
-    public void setDataPublication(ZonedDateTime dataPublication) {
+    public void setDataPublication(LocalDate dataPublication) {
         this.dataPublication = dataPublication;
     }
 
-    public ZonedDateTime getDateEdition() {
+    public LocalDate getDateEdition() {
         return dateEdition;
     }
 
-    public Oeuvre dateEdition(ZonedDateTime dateEdition) {
+    public Oeuvre dateEdition(LocalDate dateEdition) {
         this.dateEdition = dateEdition;
         return this;
     }
 
-    public void setDateEdition(ZonedDateTime dateEdition) {
+    public void setDateEdition(LocalDate dateEdition) {
         this.dateEdition = dateEdition;
     }
 
@@ -144,16 +144,16 @@ public class Oeuvre implements Serializable {
         this.numero = numero;
     }
 
-    public ZonedDateTime getParution() {
+    public LocalDate getParution() {
         return parution;
     }
 
-    public Oeuvre parution(ZonedDateTime parution) {
+    public Oeuvre parution(LocalDate parution) {
         this.parution = parution;
         return this;
     }
 
-    public void setParution(ZonedDateTime parution) {
+    public void setParution(LocalDate parution) {
         this.parution = parution;
     }
 

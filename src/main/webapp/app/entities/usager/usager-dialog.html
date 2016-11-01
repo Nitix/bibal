@@ -40,8 +40,8 @@
         <div class="form-group">
             <label class="control-label" data-translate="bibalApp.usager.dateNaissance" for="field_dateNaissance">Date Naissance</label>
                 <div class="input-group">
-                    <input id="field_dateNaissance" type="text" class="form-control" name="dateNaissance" datetime-picker="{{dateformat}}" ng-model="vm.usager.dateNaissance" is-open="vm.datePickerOpenStatus.dateNaissance"
-                    required  />
+                    <input id="field_dateNaissance" type="text" class="form-control" name="dateNaissance" uib-datepicker-popup="{{dateformat}}" ng-model="vm.usager.dateNaissance" is-open="vm.datePickerOpenStatus.dateNaissance"
+                    required/>
                     <span class="input-group-btn">
                         <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateNaissance')"><i class="glyphicon glyphicon-calendar"></i></button>
                     </span>
@@ -50,10 +50,6 @@
                 <p class="help-block"
                     ng-show="editForm.dateNaissance.$error.required" data-translate="entity.validation.required">
                     This field is required.
-                </p>
-                <p class="help-block"
-                    ng-show="editForm.dateNaissance.$error.ZonedDateTimelocal" data-translate="entity.validation.ZonedDateTimelocal">
-                    This field should be a date and time.
                 </p>
             </div>
         </div>

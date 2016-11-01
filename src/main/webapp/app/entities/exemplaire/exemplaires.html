@@ -29,7 +29,7 @@
                     <td><a ui-sref="exemplaire-detail({id:exemplaire.id})">{{exemplaire.id}}</a></td>
                     <td>{{exemplaire.etat}}</td>
                     <td>
-                        <a ui-sref="oeuvre-detail({id:exemplaire.oeuvre.id})">{{exemplaire.oeuvre.id}}</a>
+                        <a ui-sref="oeuvre-detail({id:exemplaire.oeuvre.id})">{{exemplaire.oeuvre.id}} : {{exemplaire.oeuvre.titre}} ({{exemplaire.oeuvre.auteur.nom}} {{exemplaire.oeuvre.auteur.prenom}})</a>
                     </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">

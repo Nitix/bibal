@@ -5,7 +5,7 @@ entity Exemplaire {
 entity Usager {
 	nom String required,
     prenom String required,
-    dateNaissance ZonedDateTime required,
+    dateNaissance LocalDate required,
 	adresse String required
 }
 
@@ -13,10 +13,10 @@ entity Oeuvre {
 	titre String required,
     editeur String required,
     description String required,
-    dataPublication ZonedDateTime,
-    dateEdition ZonedDateTime,
+    dataPublication LocalDate,
+    dateEdition LocalDate,
     numero Integer,
-    parution ZonedDateTime,
+    parution LocalDate,
     periodicite Integer,
     estLivre Boolean required
 }
@@ -33,7 +33,7 @@ entity Reservation {
 entity Auteur {
 	nom String required,
     prenom String required,
-    dateNaissance ZonedDateTime required
+    dateNaissance LocalDate required
 }
 
 relationship ManyToOne  {

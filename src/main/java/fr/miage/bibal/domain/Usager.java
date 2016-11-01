@@ -6,7 +6,7 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.io.Serializable;
-import java.time.ZonedDateTime;
+import java.time.LocalDate;
 import java.util.Objects;
 
 /**
@@ -33,7 +33,7 @@ public class Usager implements Serializable {
 
     @NotNull
     @Column(name = "date_naissance", nullable = false)
-    private ZonedDateTime dateNaissance;
+    private LocalDate dateNaissance;
 
     @NotNull
     @Column(name = "adresse", nullable = false)
@@ -73,16 +73,16 @@ public class Usager implements Serializable {
         this.prenom = prenom;
     }
 
-    public ZonedDateTime getDateNaissance() {
+    public LocalDate getDateNaissance() {
         return dateNaissance;
     }
 
-    public Usager dateNaissance(ZonedDateTime dateNaissance) {
+    public Usager dateNaissance(LocalDate dateNaissance) {
         this.dateNaissance = dateNaissance;
         return this;
     }
 
-    public void setDateNaissance(ZonedDateTime dateNaissance) {
+    public void setDateNaissance(LocalDate dateNaissance) {
         this.dateNaissance = dateNaissance;
     }
 

@@ -28,7 +28,7 @@
 
         <div class="form-group">
             <label data-translate="bibalApp.exemplaire.oeuvre" for="field_oeuvre">Oeuvre</label>
-            <select class="form-control" id="field_oeuvre" name="oeuvre" ng-model="vm.exemplaire.oeuvre" ng-options="oeuvre as oeuvre.id for oeuvre in vm.oeuvres track by oeuvre.id" required>
+            <select class="form-control" id="field_oeuvre" name="oeuvre" ng-model="vm.exemplaire.oeuvre" ng-options="oeuvre.id + ' : ' +  oeuvre.titre + ' (' + oeuvre.auteur.nom + ' '  + oeuvre.auteur.prenom + ')' for oeuvre in vm.oeuvres track by oeuvre.id" required>
                 <option value=""></option>
             </select>
         </div>
