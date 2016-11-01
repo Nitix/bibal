@@ -16,8 +16,15 @@
         vm.openCalendar = openCalendar;
         vm.save = save;
         vm.usagers = Usager.query();
-        vm.exemplaires = Exemplaire.query();
+        vm.exemplaires = Exemplaire.free();
+        vm.today = today;
+        vm.today();
 
+        // Date picker configuration
+        function today () {
+            // Today + 1 day - needed if the current day must be included
+            vm.toDate = new Date();
+        }
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();
         });

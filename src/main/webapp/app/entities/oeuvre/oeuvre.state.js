@@ -13,7 +13,7 @@
             parent: 'entity',
             url: '/oeuvre',
             data: {
-                authorities: ['ROLE_USER'],
+                authorities: [],
                 pageTitle: 'bibalApp.oeuvre.home.title'
             },
             views: {
@@ -35,7 +35,7 @@
             parent: 'entity',
             url: '/oeuvre/{id}',
             data: {
-                authorities: ['ROLE_USER'],
+                authorities: [],
                 pageTitle: 'bibalApp.oeuvre.detail.title'
             },
             views: {
@@ -67,7 +67,7 @@
             parent: 'oeuvre-detail',
             url: '/detail/edit',
             data: {
-                authorities: ['ROLE_USER']
+                authorities: []
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -92,7 +92,7 @@
             parent: 'oeuvre',
             url: '/new',
             data: {
-                authorities: ['ROLE_USER']
+                authorities: []
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -128,7 +128,7 @@
             parent: 'oeuvre',
             url: '/{id}/edit',
             data: {
-                authorities: ['ROLE_USER']
+                authorities: []
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -153,7 +153,7 @@
             parent: 'oeuvre',
             url: '/{id}/delete',
             data: {
-                authorities: ['ROLE_USER']
+                authorities: []
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({

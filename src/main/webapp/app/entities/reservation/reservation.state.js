@@ -13,7 +13,7 @@
             parent: 'entity',
             url: '/reservation',
             data: {
-                authorities: ['ROLE_USER'],
+                authorities: [],
                 pageTitle: 'bibalApp.reservation.home.title'
             },
             views: {
@@ -35,7 +35,7 @@
             parent: 'entity',
             url: '/reservation/{id}',
             data: {
-                authorities: ['ROLE_USER'],
+                authorities: [],
                 pageTitle: 'bibalApp.reservation.detail.title'
             },
             views: {
@@ -67,7 +67,7 @@
             parent: 'reservation-detail',
             url: '/detail/edit',
             data: {
-                authorities: ['ROLE_USER']
+                authorities: []
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -92,7 +92,7 @@
             parent: 'reservation',
             url: '/new',
             data: {
-                authorities: ['ROLE_USER']
+                authorities: []
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -120,7 +120,7 @@
             parent: 'reservation',
             url: '/{id}/edit',
             data: {
-                authorities: ['ROLE_USER']
+                authorities: []
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -145,7 +145,7 @@
             parent: 'reservation',
             url: '/{id}/delete',
             data: {
-                authorities: ['ROLE_USER']
+                authorities: []
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({

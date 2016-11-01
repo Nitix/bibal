@@ -16,7 +16,7 @@
         <div class="form-group">
             <label class="control-label" data-translate="bibalApp.emprunt.dateEmprunt" for="field_dateEmprunt">Date Emprunt</label>
                 <div class="input-group">
-                    <input id="field_dateEmprunt" type="text" class="form-control" name="dateEmprunt" datetime-picker="{{dateformat}}" ng-model="vm.emprunt.dateEmprunt" is-open="vm.datePickerOpenStatus.dateEmprunt"
+                    <input id="field_dateEmprunt" type="text" class="form-control" name="dateEmprunt" datetime-picker="{{dateformat}}" ng-model="vm.emprunt.dateEmprunt" ng-init="vm.emprunt.dateEmprunt = vm.emprunt.dateEmprunt || vm.toDate" is-open="vm.datePickerOpenStatus.dateEmprunt"
                     required  />
                     <span class="input-group-btn">
                         <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateEmprunt')"><i class="glyphicon glyphicon-calendar"></i></button>

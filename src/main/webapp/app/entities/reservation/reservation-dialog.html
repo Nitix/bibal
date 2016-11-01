@@ -16,7 +16,7 @@
         <div class="form-group">
             <label class="control-label" data-translate="bibalApp.reservation.dateReservation" for="field_dateReservation">Date Reservation</label>
                 <div class="input-group">
-                    <input id="field_dateReservation" type="text" class="form-control" name="dateReservation" datetime-picker="{{dateformat}}" ng-model="vm.reservation.dateReservation" is-open="vm.datePickerOpenStatus.dateReservation"
+                    <input id="field_dateReservation" type="text" class="form-control" name="dateReservation" datetime-picker="{{dateformat}}" ng-init="vm.reservation.dateReservation = vm.reservation.dateReservation || vm.toDate"  ng-model="vm.reservation.dateReservation" is-open="vm.datePickerOpenStatus.dateReservation"
                     required  />
                     <span class="input-group-btn">
                         <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateReservation')"><i class="glyphicon glyphicon-calendar"></i></button>
@@ -36,7 +36,7 @@
 
         <div class="form-group">
             <label data-translate="bibalApp.reservation.usager" for="field_usager">Usager</label>
-            <select class="form-control" id="field_usager" name="usager" ng-model="vm.reservation.usager" ng-options="usager as usager.id for usager in vm.usagers track by usager.id" required>
+            <select class="form-control" id="field_usager" name="usager" ng-model="vm.reservation.usager" ng-options="usager.id + ' : ' + usager.nom + ' ' + usager.prenom for usager in vm.usagers track by usager.id" required>
                 <option value=""></option>
             </select>
         </div>

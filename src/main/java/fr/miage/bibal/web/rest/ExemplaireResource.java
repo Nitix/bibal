@@ -19,6 +19,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.BooleanSupplier;
 
 /**
  * REST controller for managing Exemplaire.
@@ -28,7 +29,7 @@ import java.util.Optional;
 public class ExemplaireResource {
 
     private final Logger log = LoggerFactory.getLogger(ExemplaireResource.class);
-        
+
     @Inject
     private ExemplaireRepository exemplaireRepository;
 
@@ -87,9 +88,18 @@ public class ExemplaireResource {
         method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public List<Exemplaire> getAllExemplaires() {
+    public List<Exemplaire> getAllExemplaires(@RequestParam(required=false) Boolean free) {
+        if(free != null){
+            return getAllFreeExemplaires();
+        }
         log.debug("REST request to get all Exemplaires");
         List<Exemplaire> exemplaires = exemplaireRepository.findAll();
+        return exemplaires;
+    }
+
+    public List<Exemplaire> getAllFreeExemplaires() {
+        log.debug("REST request to get all Exemplaires");
+        List<Exemplaire> exemplaires = exemplaireRepository.findFree();
         return exemplaires;
     }
 

@@ -30,7 +30,7 @@
                     <td><a ui-sref="reservation-detail({id:reservation.id})">{{reservation.id}}</a></td>
                     <td>{{reservation.dateReservation | date:'medium'}}</td>
                     <td>
-                        <a ui-sref="usager-detail({id:reservation.usager.id})">{{reservation.usager.id}}</a>
+                        <a ui-sref="usager-detail({id:reservation.usager.id})">{{reservation.usager.id}} : {{reservation.usager.nom}} {{reservation.usager.prenom}}</a>
                     </td>
                     <td>
                         <a ui-sref="oeuvre-detail({id:reservation.oeuvre.id})">{{reservation.oeuvre.id}} : {{reservation.oeuvre.titre}} ({{reservation.oeuvre.auteur.nom}} {{reservation.oeuvre.auteur.prenom}})</a>

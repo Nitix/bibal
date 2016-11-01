@@ -9,7 +9,6 @@
 
     function ReservationDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Reservation, Usager, Oeuvre) {
         var vm = this;
-
         vm.reservation = entity;
         vm.clear = clear;
         vm.datePickerOpenStatus = {};
@@ -17,6 +16,14 @@
         vm.save = save;
         vm.usagers = Usager.query();
         vm.oeuvres = Oeuvre.query();
+        vm.today = today;
+        vm.today();
+
+        // Date picker configuration
+        function today () {
+            // Today + 1 day - needed if the current day must be included
+            vm.toDate = new Date();
+        }
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();
@@ -34,7 +41,6 @@
                 Reservation.save(vm.reservation, onSaveSuccess, onSaveError);
             }
         }
-
         function onSaveSuccess (result) {
             $scope.$emit('bibalApp:reservationUpdate', result);
             $uibModalInstance.close(result);
@@ -50,5 +56,7 @@
         function openCalendar (date) {
             vm.datePickerOpenStatus[date] = true;
         }
+
+        console.log(vm.today);
     }
 })();

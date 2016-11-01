@@ -8,7 +8,6 @@
 
     function Exemplaire ($resource) {
         var resourceUrl =  'api/exemplaires/:id';
-
         return $resource(resourceUrl, {}, {
             'query': { method: 'GET', isArray: true},
             'get': {
@@ -20,7 +19,8 @@
                     return data;
                 }
             },
-            'update': { method:'PUT' }
+            'update': { method:'PUT' },
+            'free':  { method: 'GET', isArray: true, params:{free:true}},
         });
     }
 })();
