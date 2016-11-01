@@ -49,6 +49,7 @@
                 </p>
             </div>
         </div>
+
         <div class="form-group">
             <label class="control-label" data-translate="bibalApp.oeuvre.dataPublication" for="field_dataPublication">Data Publication</label>
                 <div class="input-group">
@@ -60,6 +61,18 @@
                 </div>
         </div>
         <div class="form-group">
+            <label class="control-label" data-translate="bibalApp.oeuvre.estLivre" for="field_estLivre">L'oeuvre est un livre</label>
+            <input type="checkbox" class="form-control" name="estLivre" id="field_estLivre"
+                   ng-model="vm.oeuvre.estLivre"
+            />
+            <div ng-show="editForm.estLivre.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.estLivre.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" data-ng-show="vm.oeuvre.estLivre">
             <label class="control-label" data-translate="bibalApp.oeuvre.dateEdition" for="field_dateEdition">Date Edition</label>
                 <div class="input-group">
                     <input id="field_dateEdition" type="text" class="form-control" name="dateEdition" uib-datepicker-popup="{{dateformat}}" ng-model="vm.oeuvre.dateEdition" is-open="vm.datePickerOpenStatus.dateEdition"
@@ -69,13 +82,13 @@
                     </span>
                 </div>
         </div>
-        <div class="form-group">
+        <div class="form-group" data-ng-hide="vm.oeuvre.estLivre">
             <label class="control-label" data-translate="bibalApp.oeuvre.numero" for="field_numero">Numero</label>
             <input type="number" class="form-control" name="numero" id="field_numero"
                     ng-model="vm.oeuvre.numero"
                      />
         </div>
-        <div class="form-group">
+        <div class="form-group" data-ng-hide="vm.oeuvre.estLivre">
             <label class="control-label" data-translate="bibalApp.oeuvre.parution" for="field_parution">Parution</label>
                 <div class="input-group">
                     <input id="field_parution" type="text" class="form-control" name="parution" uib-datepicker-popup="{{dateformat}}" ng-model="vm.oeuvre.parution" is-open="vm.datePickerOpenStatus.parution"
@@ -85,13 +98,13 @@
                     </span>
                 </div>
         </div>
-        <div class="form-group">
+        <div class="form-group" data-ng-hide="vm.oeuvre.estLivre">
             <label class="control-label" data-translate="bibalApp.oeuvre.periodicite" for="field_periodicite">Periodicite</label>
             <input type="number" class="form-control" name="periodicite" id="field_periodicite"
                     ng-model="vm.oeuvre.periodicite"
                      />
         </div>
-        <div class="form-group">
+        <div class="form-group" data-ng-show="vm.oeuvre.estLivre">
             <label data-translate="bibalApp.oeuvre.auteur" for="field_auteur">Auteur</label>
             <select class="form-control" id="field_auteur"  name="auteur" ng-model="vm.oeuvre.auteur" ng-options="auteur.id + ' : ' +  auteur.nom + ' ' + auteur.prenom for auteur in vm.auteurs track by auteur.id" required>
             </select>

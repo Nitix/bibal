@@ -16,6 +16,7 @@
         vm.openCalendar = openCalendar;
         vm.save = save;
         vm.auteurs = Auteur.query();
+        vm.oeuvre.estLivre = true;
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();
