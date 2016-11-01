@@ -3,15 +3,15 @@
         "reservation" : {
             "home": {
                 "title": "Reservations",
-                "createLabel": "Créer un nouveau Reservation",
+                "createLabel": "Créer une nouvelle Reservation",
                 "createOrEditLabel": "Créer ou éditer un Reservation",
-                "search": "Recherche pour Reservation"
+                "search": "Rechercher une Reservation"
             },
-            "created": "Un nouveau Reservation a été créé avec l'identifiant {{ param }}",
-            "updated": "Le Reservation avec l'identifiant {{ param }} a été mis à jour",
-            "deleted": "Le Reservation avec l'identifiant {{ param }} a été supprimé",
+            "created": "Une nouvelle Reservation a été créée avec l'identifiant {{ param }}",
+            "updated": "La Reservation avec l'identifiant {{ param }} a été mise à jour",
+            "deleted": "La Reservation avec l'identifiant {{ param }} a été supprimée",
             "delete": {
-                "question": "Etes-vous certain de vouloir supprimer le Reservation {{ id }} ?"
+                "question": "Etes-vous certain de vouloir supprimer la Reservation {{ id }} ?"
             },
             "detail": {
                 "title": "Reservation"

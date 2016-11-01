@@ -3,15 +3,15 @@
         "oeuvre" : {
             "home": {
                 "title": "Oeuvres",
-                "createLabel": "Créer un nouveau Oeuvre",
-                "createOrEditLabel": "Créer ou éditer un Oeuvre",
+                "createLabel": "Créer une nouvelle Oeuvre",
+                "createOrEditLabel": "Créer ou éditer une Oeuvre",
                 "search": "Recherche pour Oeuvre"
             },
-            "created": "Un nouveau Oeuvre a été créé avec l'identifiant {{ param }}",
-            "updated": "Le Oeuvre avec l'identifiant {{ param }} a été mis à jour",
-            "deleted": "Le Oeuvre avec l'identifiant {{ param }} a été supprimé",
+            "created": "Une nouvelle Oeuvre a été créée avec l'identifiant {{ param }}",
+            "updated": "L'Oeuvre avec l'identifiant {{ param }} a été mise à jour",
+            "deleted": "L'Oeuvre avec l'identifiant {{ param }} a été supprimée",
             "delete": {
-                "question": "Etes-vous certain de vouloir supprimer le Oeuvre {{ id }} ?"
+                "question": "Etes-vous certain de vouloir supprimer l'Oeuvre {{ id }} ?"
             },
             "detail": {
                 "title": "Oeuvre"
