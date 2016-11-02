@@ -23,12 +23,14 @@
                     <th><span data-translate="bibalApp.oeuvre.editeur">Editeur</span></th>
                     <th><span data-translate="bibalApp.oeuvre.description">Description</span></th>
                     <th><span data-translate="bibalApp.oeuvre.dataPublication">Data Publication</span></th>
+                    <!--
                     <th><span data-translate="bibalApp.oeuvre.dateEdition">Date Edition</span></th>
                     <th><span data-translate="bibalApp.oeuvre.numero">Numero</span></th>
                     <th><span data-translate="bibalApp.oeuvre.parution">Parution</span></th>
                     <th><span data-translate="bibalApp.oeuvre.periodicite">Periodicite</span></th>
                     <th><span data-translate="bibalApp.oeuvre.estLivre">Est Livre</span></th>
                     <th><span data-translate="bibalApp.oeuvre.auteur">Auteur</span></th>
+                    -->
                     <th></th>
                 </tr>
             </thead>
@@ -39,7 +41,7 @@
                     <td>{{oeuvre.editeur}}</td>
                     <td>{{oeuvre.description}}</td>
                         <td>{{oeuvre.dataPublication | date:'mediumDate'}}</td>
-                        <td>{{oeuvre.dateEdition | date:'mediumDate'}}</td>
+                        <!--<td>{{oeuvre.dateEdition | date:'mediumDate'}}</td>
                     <td>{{oeuvre.numero}}</td>
                         <td>{{oeuvre.parution | date:'mediumDate'}}</td>
                     <td>{{oeuvre.periodicite}}</td>
@@ -47,6 +49,7 @@
                     <td>
                         <a ui-sref="auteur-detail({id:oeuvre.auteur.id})">{{oeuvre.auteur.id}} : {{oeuvre.auteur.nom}} {{oeuvre.auteur.prenom}}</a>
                     </td>
+                    -->
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"
