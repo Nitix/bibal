@@ -42,7 +42,9 @@
                     copy.parution = DateUtils.convertLocalDateToServer(copy.parution);
                     return angular.toJson(copy);
                 }
-            }
-        });
+            },
+            'withExemplaire' : { method: 'GET', isArray: true, params:{withExemplaire:true}}
+
+    });
     }
 })();

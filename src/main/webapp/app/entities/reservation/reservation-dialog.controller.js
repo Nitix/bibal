@@ -15,7 +15,7 @@
         vm.openCalendar = openCalendar;
         vm.save = save;
         vm.usagers = Usager.query();
-        vm.oeuvres = Oeuvre.query();
+        vm.oeuvres = Oeuvre.withExemplaire();
         vm.today = today;
         vm.today();
 

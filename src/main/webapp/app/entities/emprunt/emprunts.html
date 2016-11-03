@@ -52,6 +52,12 @@
                                 <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
                             </button>
                             <button type="submit"
+                                    ng-click="quickReturn($index)"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-check"></span>
+                                <span class="hidden-xs hidden-sm">Retour rapide</span>
+                            </button>
+                            <button type="submit"
                                     ui-sref="emprunt.delete({id:emprunt.id})"
                                     class="btn btn-danger btn-sm">
                                 <span class="glyphicon glyphicon-remove-circle"></span>

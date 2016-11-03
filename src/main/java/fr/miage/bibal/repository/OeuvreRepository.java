@@ -9,7 +9,9 @@ import java.util.List;
 /**
  * Spring Data JPA repository for the Oeuvre entity.
  */
-@SuppressWarnings("unused")
 public interface OeuvreRepository extends JpaRepository<Oeuvre,Long> {
+
+    @Query("SELECT DISTINCT oeuvre from Exemplaire exemplaire INNER JOIN exemplaire.oeuvre oeuvre")
+    List<Oeuvre> findWithExemplaire();
 
 }

@@ -28,7 +28,7 @@ import java.util.Optional;
 public class OeuvreResource {
 
     private final Logger log = LoggerFactory.getLogger(OeuvreResource.class);
-        
+
     @Inject
     private OeuvreRepository oeuvreRepository;
 
@@ -87,7 +87,11 @@ public class OeuvreResource {
         method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public List<Oeuvre> getAllOeuvres() {
+    public List<Oeuvre> getAllOeuvres(@RequestParam(required = false) Boolean withExemplaire) {
+        if(withExemplaire != null){
+            log.debug("REST request to get all Oeuvres with exemplaire");
+            return oeuvreRepository.findWithExemplaire();
+        }
         log.debug("REST request to get all Oeuvres");
         List<Oeuvre> oeuvres = oeuvreRepository.findAll();
         return oeuvres;
